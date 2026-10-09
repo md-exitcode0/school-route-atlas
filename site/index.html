@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light">
+<title>School Route Atlas | Courses, exams & university paths</title>
+<meta name="description" content="An interactive guide to Alberta high-school courses, exams, credits and nine university routes. Planning scenarios, not registration or admission guarantees.">
+<link rel="stylesheet" href="styles.css"><script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to guide</a>
+<header class="topbar"><a class="brand" href="#overview"><span class="brand-mark" aria-hidden="true">R</span><span>School Route<span class="brand-sub">A learning atlas</span></span></a><span class="header-note">ALBERTA / UNIVERSITY / BUILDING</span><a class="source-shortcut" href="#sources">Sources & limits</a></header>
+<div class="layout">
+<aside class="rail"><div class="rail-caption">Inside the guide</div><nav aria-label="Guide chapters">
+<a href="#overview" data-page="overview"><span>01</span> The whole route</a><a href="#courses" data-page="courses"><span>02</span> Courses & learning</a><a href="#credits" data-page="credits"><span>03</span> The credit map</a><a href="#exams" data-page="exams"><span>04</span> Exams, explained</a><a href="#timeline" data-page="timeline"><span>05</span> A conditional fast route</a><a href="#universities" data-page="universities"><span>06</span> University routes</a><a href="#founder" data-page="founder"><span>07</span> Build alongside school</a><a href="#glossary" data-page="glossary"><span>08</span> Plain-language glossary</a><a href="#sources" data-page="sources"><span>09</span> Sources & open questions</a>
+</nav><div class="rail-foot"><span class="tiny-rule"></span><p>A route is a set of choices.<br>Not a promise of a place.</p><span id="checked-date">Public-safe planning guide</span></div></aside>
+<main id="main" tabindex="-1"><div id="data-warning" role="status" hidden></div><div id="view" aria-busy="true"><div class="loading"><p class="eyebrow">School Route Atlas</p><h1>Loading the guide.</h1><p>Reading the course and university evidence.</p></div></div></main>
+</div>
+<dialog id="detail-dialog" aria-labelledby="detail-title"><button type="button" class="dialog-close" aria-label="Close details">Close <span aria-hidden="true">×</span></button><div id="detail-body"></div></dialog>
+<noscript><p class="notice">This interactive guide needs JavaScript. The factual packets are available as <a href="content.json">school content</a> and <a href="additional-universities.json">university research</a>.</p></noscript>
+</body></html>

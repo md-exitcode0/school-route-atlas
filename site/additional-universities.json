@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-08T21:46:00-06:00",
+  "scope": "Five additional university options for Avery's existing school-route guide. Existing Stanford, Berkeley, Waterloo and Toronto evidence is unchanged. No private biography, accounts, outreach, registration, paid calls, UI edits or publishing.",
+  "report": {
+    "recommendation": "Add Calgary and Alberta as Canadian public-university CS routes, UBC Vancouver as a two-stage Science-to-CS route, and Santa Clara and San Jose State as separate Bay Area possibilities. None is an automatic safety guarantee.",
+    "integration_notes": [
+      "Separate admission eligibility, competitive selection and later program progression. A published minimum is not an offer guarantee.",
+      "UBC Vancouver first-year BSc admission does not guarantee a Computer Science specialization. Do not apply its specialization rules to Okanagan.",
+      "Santa Clara's Arts and Sciences BS in Computer Science and Engineering-school BS in Computer Science and Engineering are different routes within one private university.",
+      "San Jose State is a California public university with major-level impaction and local preference, not a guaranteed fallback. Its BSCS is not the Computer Engineering degree.",
+      "Use Canadian-student fee/aid categories for Canadian public universities where applicable. For the US schools, Canadian citizenship alone does not confer California residency or US federal/state aid eligibility.",
+      "Show US prices only with academic year, currency, course load and exclusions. Do not turn Alberta's general Arts estimate into a Computing Science quote or a tuition-only figure into an all-in total.",
+      "The current UAlberta five-subject high-school admission table could not be fully extracted. Keep its exact subject list as a linked verification item, not a guessed checklist. The May 2026 Computing Science 'n/a' row is about additional course-registration prerequisites, not exemption from general admission requirements."
+    ]
+  },
+  "universities": [
+    {
+      "id": "ucalgary",
+      "name": "University of Calgary",
+      "category": "Canadian public university",
+      "campus": "Calgary, Alberta",
+      "degree": "Bachelor of Science (BSc), Computer Science, Faculty of Science",
+      "admission_route": "Apply for the undergraduate Computer Science BSc program from high school. This is not UBC Vancouver's later coordinated specialization-selection route.",
+      "alberta_prerequisites": {
+        "status": "verified from current undergraduate calendar",
+        "credential": "Alberta Grade 12 graduation or equivalent, with five required 30-level courses or equivalents",
+        "required": ["English Language Arts 30-1", "Mathematics 30-1"],
+        "choose_two": ["Biology 30", "Chemistry 30", "Physics 30", "Mathematics 31", "CTS Computing Science at the 30 level, 5 credits"],
+        "fifth": "One approved course or option at the 30 level",
+        "source_row": "Faculty of Science: All other programs",
+        "limit": "Do not make Mathematics 31 universally mandatory. Verify the fifth course against UCalgary's approved-course/option rules. Program-specific competitive average was not reliably exposed by the dynamic selector."
+      },
+      "minimum_vs_competitive": "The course list establishes eligibility requirements, not an admission guarantee. No numerical CS competitive cutoff is asserted in this bundle.",
+      "application": {"system": "ApplyAlberta, then UCalgary application", "url": "https://www.ucalgary.ca/future-students/undergraduate/admissions/how-to-apply"},
+      "cost_aid": {
+        "currency": "CAD",
+        "category": "Use the Canadian/domestic student category when applicable; estimate program/course load, mandatory fees and housing separately.",
+        "cost_url": "https://www.ucalgary.ca/registrar/finances/tuition-and-fees/undergraduate-student-cost-estimator",
+        "aid_url": "https://www.ucalgary.ca/future-students/undergraduate/finances",
+        "dated_limit": "The current estimator page says tuition estimates are valid up to April 2027. No CS annual or all-in dollar total was extracted."
+      },
+      "community": {
+        "name": "Hunter Hub Launchpad",
+        "url": "https://www.ucalgary.ca/hunter-hub/programs/hunter-hub-programs/launchpad",
+        "verified_mechanism": "Six-month co-curricular tech-venture/team-building program with weekly sessions, workshops, coaching and a final pitch competition. Open to UCalgary undergraduate and graduate students, postdocs, faculty, staff and alumni, across faculties; individuals or teams may apply.",
+        "availability_limit": "The inspected page says applications are closed. Its listed deadline was September 28, 2026. This is evidence of a founder mechanism, not a currently open opportunity or guaranteed acceptance/funding."
+      },
+      "sources": [
+        {"title": "Computer Science", "publisher": "University of Calgary Future Students", "url": "https://www.ucalgary.ca/future-students/undergraduate/explore-programs/computer-science", "supports": "BSc name and Faculty of Science program route", "verification": "Page fetched; degree heading independently extracted from current HTML"},
+        {"title": "A.5.1.1 Undergraduate Admission Requirements", "publisher": "UCalgary Calendar", "url": "https://calendar.ucalgary.ca/pages/d11b4800e47040a287de3426e4a83bcf", "supports": "Five-course Alberta list, Faculty of Science all-other-programs row", "verification": "Calendar fetched; substantive table extracted from its embedded JSON content to avoid navigation-only output"},
+        {"title": "How to apply", "publisher": "University of Calgary Future Students", "url": "https://www.ucalgary.ca/future-students/undergraduate/admissions/how-to-apply", "supports": "ApplyAlberta entry for Alberta-school applicants", "verification": "Page fetched; current Step 1 text extracted"},
+        {"title": "Undergraduate student cost estimator", "publisher": "UCalgary Office of the Registrar", "url": "https://www.ucalgary.ca/registrar/finances/tuition-and-fees/undergraduate-student-cost-estimator", "supports": "Cost estimator, linked funding page and April 2027 validity limit", "verification": "Page fetched; no personalized calculator result produced"},
+        {"title": "Launchpad", "publisher": "UCalgary Hunter Hub", "url": "https://www.ucalgary.ca/hunter-hub/programs/hunter-hub-programs/launchpad", "supports": "Student/team access and six-month venture mechanism; closed application status", "verification": "Primary program page fetched"}
+      ]
+    },
+    {
+      "id": "ualberta",
+      "name": "University of Alberta",
+      "category": "Canadian public university",
+      "campus": "Edmonton Faculty of Science route; not Augustana or Faculte Saint-Jean",
+      "degree": "Bachelor of Science with Major in Computing Science; BSc Honors in Computing Science is a separate available route",
+      "admission_route": "High-school applicants apply to the Faculty of Science degree/subject route. The Major degree requires a declared major; an optional minor or eligible double major is possible. Do not substitute historical Specialization-degree requirements or another campus's requirements.",
+      "alberta_prerequisites": {
+        "status": "partially verified; exact current five-subject list remains unextracted",
+        "verified": "Faculty of Science says the high-school admission average is calculated from five required Grade 12 courses. All applicants must satisfy English Language Proficiency.",
+        "additional_computing_science_registration_prerequisites": "The Science Prerequisites table, updated May 2026, lists Computing Science: n/a. Its introduction defines these as additional high-school prerequisites for registering in university courses, not the general admission subject list.",
+        "current_admission_table_url": "https://calendar.ualberta.ca/content.php?catoid=69&navoid=20823#high-school-applicants",
+        "limit": "Do not present 'n/a' as no required English/math/science courses. Direct current-calendar requests returned an HTTP 202 empty challenge; provider extracts were dominated by navigation and did not expose the complete high-school table. The outdated 2017-18 and Augustana search results were not used."
+      },
+      "minimum_vs_competitive": {"major_minimum_application_average_percent": 70, "honors_minimum_application_average_percent": 80, "meaning": "Minimum to apply, not competitive admitted averages. The Faculty explicitly says meeting the minimum does not guarantee admission, and competitive averages vary with the applicant pool."},
+      "application": {"system": "ApplyAlberta for first-time Canadian applicants not currently attending UAlberta, then the UAlberta application/Launchpad", "url": "https://apply.ualberta.ca/apply"},
+      "cost_aid": {
+        "currency": "CAD",
+        "category": "Canadian/domestic category when applicable; select Computing Science in the cost calculator rather than using a general Arts example.",
+        "cost_url": "https://costcalculator.registrar.ualberta.ca/costcalculator/",
+        "context_url": "https://www.ualberta.ca/admissions/undergraduate/tuition-and-scholarships/tuition-and-fees.html",
+        "aid_navigation_url": "https://www.ualberta.ca/en/admissions/tuition-and-scholarships/index.html",
+        "limit": "The fetched 2026-27 headline cost example is explicitly general Arts, not CS. Its CAD 25,700 residence-and-study subtotal is therefore not quoted as Computing Science all-in. Program-specific cost and award eligibility require the linked calculator/award pages."
+      },
+      "community": {"name": "eHUB Entrepreneurship Centre", "url": "https://www.ualberta.ca/en/entrepreneurship-centre/about.html", "verified_mechanism": "Support, learning and mentorship for students across faculties. Students or student teams formally join to gain community access. Suitable for prospective or established student entrepreneurs.", "limit": "University affiliation is not automatic membership, investment or accelerator admission."},
+      "sources": [
+        {"title": "Computing Science", "publisher": "University of Alberta Undergraduate Programs", "url": "https://www.ualberta.ca/en/undergraduate-programs/bachelor-of-science-with-major-computing-science.html", "supports": "BSc with Major degree, Honors alternative, optional minor/double major", "verification": "Primary program page fetched; dynamic province requirements did not expose a full subject list"},
+        {"title": "Admission to Science", "publisher": "University of Alberta Faculty of Science", "url": "https://www.ualberta.ca/en/science/programs/bachelor-of-science/admission-to-science/index.html", "supports": "70% Major and 80% Honors minimum-to-apply, five-course average, English role and explicit competitive caveat", "verification": "Faculty page fetched in substantive form"},
+        {"title": "Science Prerequisites", "publisher": "University of Alberta Faculty of Science", "url": "https://www.ualberta.ca/en/science/programs/bachelor-of-science/admission-to-science/index1.html", "displayed_update": "May 2026", "supports": "Computing Science n/a row and course-registration rather than general-admission scope", "verification": "Current table and explanatory introduction fetched"},
+        {"title": "Apply for Undergraduate Admission", "publisher": "University of Alberta", "url": "https://apply.ualberta.ca/apply", "supports": "Canadian first-time ApplyAlberta routing", "verification": "Read-only application entry page fetched; no account created"},
+        {"title": "Tuition + Fees", "publisher": "University of Alberta Undergraduate Admissions", "url": "https://www.ualberta.ca/admissions/undergraduate/tuition-and-scholarships/tuition-and-fees.html", "supports": "2026-27 general Arts scope and official customized cost calculator", "verification": "Primary fee page fetched; no CS total inferred"},
+        {"title": "About eHUB", "publisher": "University of Alberta eHUB", "url": "https://www.ualberta.ca/en/entrepreneurship-centre/about.html", "supports": "Cross-faculty student/team entrepreneurship community with formal joining", "verification": "Primary page fetched"}
+      ]
+    },
+    {
+      "id": "ubc",
+      "name": "University of British Columbia",
+      "category": "Canadian public university",
+      "campus": "Vancouver primary CS route; Okanagan BSc is a separately identified campus alternative",
+      "degree": "Vancouver Bachelor of Science with a Computer Science specialization/major",
+      "admission_route": "Apply first to the Vancouver BSc/Faculty of Science. Eligible students then apply through coordinated BSc specialization selection when moving into second-year standing, commonly after first year. Rank three eligible specializations; admission to Science is not a guaranteed CS seat.",
+      "alberta_prerequisites": {
+        "status": "verified from the official Alberta/Vancouver/Science selector's read-only data response",
+        "grade_12": ["English Language Arts 30-1", "Math 30-1 or Math 31, 5 credits", "Biology 30, Chemistry 30, or Physics 30"],
+        "grade_11": ["Chemistry 20", "Physics 20"],
+        "physics_20_waiver": "The selector says Physics 20 may be waived with scores of 86% or higher in senior-level Math and Chemistry.",
+        "general": "High-school graduation; minimum 70% in Grade 11 or Grade 12 English or equivalents; at least six Grade 12 academic/non-academic courses recommended, not required. UBC considers academic Grade 11 and Grade 12 grades, with attention to degree-related subjects.",
+        "english": "Separate English Language Admission Standard applies; possessing the required ELA course does not by itself settle every language-proficiency case.",
+        "online_course_note": "The Canadian-high-school page says distributed-learning courses used for degree requirements need interim grades at 50% completion submitted by March 15 and completion by June 30. Recheck the applicable entry cycle before turning this into a personal deadline."
+      },
+      "specialization": {
+        "eligibility": "For Major (0376) Computer Science: SCIE_V 001 OR CPSC_V 107 OR CPSC_V 110 OR 6 transfer credits from a two-course computer-programming sequence whose first course is prerequisite to the second. Faculty promotion requirements also apply.",
+        "selection": "These are eligibility requirements, not competitive cutoffs. CS belongs to an umbrella quota; students may select up to two specializations within the CS umbrella. Historical admission averages vary and cannot predict future admission.",
+        "timing": "The page inspected October 8, 2026 says specialization applications are closed and will reopen in May 2027. This is current-page context, not a deadline for a future cohort.",
+        "source_urls": ["https://science.ubc.ca/students/moving-to-second-year", "https://science.ubc.ca/students/spec-admission-requirements", "https://science.ubc.ca/students/historical-bsc-specialization-admission-information"]
+      },
+      "campus_difference": "UBC Okanagan separately offers a Computer Science BSc in the Irving K. Barber Faculty of Science, with co-op and a client software capstone described. Vancouver's CS umbrella cutoff/selection rules must not be copied onto Okanagan. Okanagan progression rules were not separately audited in this bounded pass.",
+      "application": {"system": "EducationPlannerBC; choose first and second degree/campus choices, which may be on different campuses", "url": "https://you.ubc.ca/applying-ubc/how-to-apply/application"},
+      "cost_aid": {"currency": "CAD", "category": "Use the appropriate domestic/Canadian category, campus and degree in UBC's first-year cost tool. Housing and course load matter.", "cost_url": "https://you.ubc.ca/financial-planning/cost/", "aid_url": "https://you.ubc.ca/financial-planning/scholarships-awards-canadian-students/", "limit": "No personalized or dated CS dollar total produced. Award listings do not guarantee an award."},
+      "community": {"name": "UBC Computer Science co-op/student experience", "url": "https://www.cs.ubc.ca/students/undergrad/prospective", "verified_mechanism": "The department describes a co-op route for work experience and links its careers/co-op information.", "limit": "Co-op access, employment and earnings are not guaranteed. This is official program/community context, not an independent student review."},
+      "sources": [
+        {"title": "Canadian high schools", "publisher": "UBC Undergraduate Programs and Admissions", "url": "https://you.ubc.ca/applying-ubc/requirements/canadian-high-schools/", "supports": "Alberta Science requirements and distributed-learning rule", "verification": "Page fetched; dynamic Alberta/Vancouver Science selection resolved through its own public read-only AJAX data endpoint"},
+        {"title": "Alberta/Vancouver Science admission selector data", "publisher": "UBC Undergraduate Programs and Admissions", "url": "https://you.ubc.ca/wp-admin/admin-ajax.php", "verification": "POST is a read-only published selector operation, not an application or registration", "payload": {"action": "requirements_load_program", "type": "requirement_province", "location": "711", "requirement": "530014", "campus": "vancouver", "theme": "page_requirements"}, "exact_support": "Science: Grade 12 ELA 30-1; Math 30-1 or Math 31 (5 credits); Biology 30, Chemistry 30, or Physics 30. Grade 11 Chemistry 20; Physics 20 (may be waived with scores of 86% or higher in senior-level Math and Chemistry).", "general_payload_action": "requirements_load_programs", "general_support": "High-school graduation; minimum 70% in Grade 11 or 12 English; six Grade 12 courses recommended, not required."},
+        {"title": "Moving to Second Year Class Standing", "publisher": "UBC Science, Vancouver", "url": "https://science.ubc.ca/students/moving-to-second-year", "supports": "Coordinated specialization selection, three choices and separate application", "verification": "Primary page fetched and relevant steps directly extracted"},
+        {"title": "BSc Specialization Application: Requirements", "publisher": "UBC Science, Vancouver", "url": "https://science.ubc.ca/students/spec-admission-requirements", "supports": "Major 0376 course alternatives and current May 2027 reopen notice", "verification": "Primary page fetched; CS-specific table extracted from current HTML"},
+        {"title": "Historical BSc Specialization Admission Information", "publisher": "UBC Science, Vancouver", "url": "https://science.ubc.ca/students/historical-bsc-specialization-admission-information", "supports": "Quota-based CS umbrella and unpredictability of future admission averages", "verification": "Page fetched and CS umbrella section extracted; no historic percent is presented as a future threshold"},
+        {"title": "Computer Science (BSc), Okanagan", "publisher": "UBC Undergraduate Programs and Admissions", "url": "https://you.ubc.ca/programs/computer-science-okanagan-bsc", "supports": "Separate Okanagan BSc, faculty, co-op/client capstone context", "verification": "Page fetched; main program text extracted"},
+        {"title": "Complete the application", "publisher": "UBC Undergraduate Programs and Admissions", "url": "https://you.ubc.ca/applying-ubc/how-to-apply/application", "supports": "EducationPlannerBC and first/second degree-campus choices", "verification": "Primary page fetched"},
+        {"title": "What Will Your First Year at UBC Cost?", "publisher": "UBC Undergraduate Programs and Admissions", "url": "https://you.ubc.ca/financial-planning/cost/", "supports": "Official cost-tool destination only", "verification": "Destination fetched; dynamic calculator values not produced"},
+        {"title": "Scholarships for Canadian UBC Students", "publisher": "UBC Undergraduate Programs and Admissions", "url": "https://you.ubc.ca/financial-planning/scholarships-awards-canadian-students/", "supports": "Canadian award category and linked options", "verification": "Award-directory page fetched; individual award conditions not audited"},
+        {"title": "Prospective Undergrads", "publisher": "UBC Department of Computer Science", "url": "https://www.cs.ubc.ca/students/undergrad/prospective", "supports": "Department co-op/community context", "verification": "Primary page fetched"}
+      ]
+    },
+    {
+      "id": "santa_clara",
+      "name": "Santa Clara University",
+      "category": "US private university, Bay Area",
+      "campus": "Santa Clara, California",
+      "degree": "BS in Computer Science, College of Arts and Sciences; separate BS in Computer Science and Engineering, School of Engineering",
+      "admission_route": "First-year applicants select an academic school/college, then may declare a major or remain undeclared. Choose Arts and Sciences for CS versus Engineering for CSE. Readiness at calculus level is expected for natural science and engineering applicants.",
+      "alberta_prerequisites": {"status": "No Alberta-specific course equivalency checklist was verified", "published_general_minima": ["History/Social Science: 3 years", "English: 4 years", "Mathematics: 3 years required, 4 recommended", "Laboratory Science: 2 years required, 3 recommended", "Language Other Than English: 2 years required, 3 recommended, 4 preferred"], "recommendation": "Visual/Performing Arts: 1 year recommended", "limit": "These are minimum preparation categories, not competitive acceptance criteria or a confirmed Alberta-course mapping."},
+      "minimum_vs_competitive": "SCU explicitly calls admission competitive/selective and evaluates academic performance plus other application evidence. Neither college/degree is a guaranteed safety.",
+      "application": {"system": "Common Application for all first-year applicants", "url": "https://www.scu.edu/admission/undergraduate/first-year-students", "plans": "Early Decision I/II binding; Early Action nonbinding; Regular Decision"},
+      "cost_aid": {
+        "currency": "USD",
+        "academic_year": "2026-2027",
+        "published_cost_of_attendance": {"on_campus": 92556, "off_campus": 99030, "commuter": 85413},
+        "on_campus_direct_cost": 85830,
+        "tuition": 64956,
+        "cost_url": "https://www.scu.edu/financialaid/cost-of-attendance",
+        "aid_url": "https://www.scu.edu/financialaid/international",
+        "aid_category": "International undergraduates may qualify for scholarships; federal/state aid only for US citizens or eligible noncitizens. No specific scholarship amount or full-need guarantee verified.",
+        "limit": "Published budget, not net price or a guaranteed twelve-month international all-in bill. Check health-insurance and individual living/travel needs separately; these were not itemized as a separate insurance line in the captured undergraduate budget."
+      },
+      "community": {"name": "Bronco Ventures Accelerator", "url": "https://www.scu.edu/cioccacenter/bronco-ventures/bronco-venture-accelerator", "verified_mechanism": "Small-cohort, July-to-October full-time accelerator for SCU entrepreneurs, with workshops, weekly speakers, one-to-one mentors and Demo Day.", "limit": "Not automatic undergraduate access or guaranteed investment. The page's BVA8 deadlines were May 29/June 12, 2026, already past. Current next-cohort eligibility was not verified."},
+      "sources": [
+        {"title": "Mathematics & Computer Science", "publisher": "Santa Clara College of Arts and Sciences", "url": "https://www.scu.edu/cas/mathcs", "supports": "BS in Computer Science and CS emphases", "verification": "Department page fetched"},
+        {"title": "Computer Science and Engineering Major", "publisher": "Santa Clara School of Engineering", "url": "https://www.scu.edu/engineering/academic-programs/department-of-computer-engineering/undergraduate/computer-science-and-engineering-major", "supports": "Separate BS CSE degree with hardware/software engineering core", "verification": "Department degree page fetched; detailed curriculum includes older dated notes, so only degree distinction/core description is used"},
+        {"title": "First-Year Students", "publisher": "Santa Clara Undergraduate Admission", "url": "https://www.scu.edu/admission/undergraduate/first-year-students", "supports": "School selection, Common App, course minimums and calculus readiness", "verification": "Current admissions page fetched"},
+        {"title": "Cost of Attendance", "publisher": "Santa Clara Financial Aid", "url": "https://www.scu.edu/financialaid/cost-of-attendance", "supports": "2026-27 undergraduate USD budgets", "verification": "Substantive undergraduate table fetched; graduate table not used"},
+        {"title": "International", "publisher": "Santa Clara Financial Aid", "url": "https://www.scu.edu/financialaid/international", "supports": "Limited international aid, possible undergraduate scholarships, federal/state citizenship eligibility", "verification": "Primary aid page fetched"},
+        {"title": "Bronco Ventures Accelerator", "publisher": "Santa Clara Ciocca Center", "url": "https://www.scu.edu/cioccacenter/bronco-ventures/bronco-venture-accelerator", "supports": "Founder mechanism and past 2026 cohort dates", "verification": "Primary page fetched; not described as currently accepting applicants"}
+      ]
+    },
+    {
+      "id": "san_jose_state",
+      "name": "San Jose State University",
+      "category": "US California public university, Bay Area",
+      "campus": "San Jose, California",
+      "degree": "Bachelor of Science in Computer Science, Department of Computer Science",
+      "admission_route": "Apply as an international first-time first-year applicant via Cal State Apply, selecting the intended major and alternate major. CSU eligibility is followed by SJSU major-level impaction selection. The major cannot be changed during admission; later change of major is by petition and never guaranteed.",
+      "alberta_prerequisites": {"status": "No Alberta-specific equivalency checklist verified; use international FTFY requirements", "published_minima": ["Equivalent of US GPA 3.0 or B average", "Three years of college-preparatory mathematics with C- or better", "Four years college-preparatory English when English is the school's medium of instruction", "Official Grade 9-12 records and final secondary completion date"], "english_exemption": "The dedicated English-proficiency page exempts applicants with at least three years full-time study at an institution where English is the primary language of instruction. Do not assume exemption from citizenship alone.", "limit": "SJSU converts international grades as needed. Minimum 3.0/B does not establish the competitive CS threshold."},
+      "minimum_vs_competitive": "All SJSU majors are impacted. Applicants are ranked within their chosen major and capacity; local high-school preference is tied to Santa Clara County, not Bay Area aspiration or Canadian citizenship. Fall 2026 CS's historical impaction point index was 3240. That is not a GPA, an Alberta-percent cutoff or a guaranteed Fall 2027 threshold.",
+      "testing": "The current impaction page explicitly says Fall 2027 SAT/ACT scores are not considered for admission. The international steps page still contains older encouragement to submit scores for an English exemption; do not treat that as SAT/ACT-based admission selection. Use the dedicated English policy for language requirements.",
+      "application": {"system": "Cal State Apply; MySJSU for follow-up requirements", "url": "https://www.sjsu.edu/admissions/international-freshman/want-to-apply/international-freshman-steps-to-admission/index.php"},
+      "cost_aid": {
+        "currency": "USD",
+        "category": "International/nonresident undergraduate; not California resident pricing",
+        "published_financial_document_estimates": [
+          {"academic_year": "Fall 2026-Spring 2027", "units_per_semester": 12, "tuition_fees": 20538, "living": 26490, "medical_insurance": 2250, "total": 49278},
+          {"academic_year": "Fall 2027-Spring 2028", "units_per_semester": 12, "tuition_fees": 21915, "living": 27813, "medical_insurance": 2250, "total": 51978}
+        ],
+        "cost_url": "https://www.sjsu.edu/admissions/internationalfinancialdocs.php",
+        "limit": "These are published first-year financial-document estimates at 12 units per semester; fees can change and a larger course load may cost more. Not a four-year quote, net-after-aid price, or guarantee that 12 units/term keeps every degree on a four-year schedule. No SJSU international aid entitlement or scholarship award was established in this pass."
+      },
+      "community": {"name": "SpartUp Incubator Pitch Jam", "url": "https://events.sjsu.edu/event/2026-spartup-incubator-pitch-jam", "verified_mechanism": "The university's event page describes student founders pitching startups to a startup community at the Student Union Theater.", "event_date": "April 10, 2026", "limit": "Past event evidence only, not a current registration opportunity or general incubator admission/funding guarantee."},
+      "sources": [
+        {"title": "Bachelor of Science in Computer Science", "publisher": "SJSU Department of Computer Science", "url": "https://www.sjsu.edu/cs/programs/bs-computer-science.php", "supports": "Exact BSCS degree", "verification": "Department page fetched"},
+        {"title": "CSU Eligibility Requirements: International First-Time, First-Year", "publisher": "SJSU Admissions", "url": "https://www.sjsu.edu/admissions/international-freshman/admission-requirements/csu-eligibility-requirements/index.php", "supports": "International 3.0/B minimum, math, English and transcripts", "verification": "Primary requirements page fetched"},
+        {"title": "Impaction", "publisher": "SJSU Admissions", "url": "https://www.sjsu.edu/admissions/impaction/index.php", "supports": "Competitive major capacity, local preference and Fall 2027 SAT/ACT exclusion", "verification": "Primary policy fetched"},
+        {"title": "Fall 2026 First Time First Year Impaction Results", "publisher": "SJSU Admissions", "url": "https://www.sjsu.edu/admissions/impaction/freshmen-impaction-results/index.php", "supports": "Historic CS point index 3240, not future cutoff", "verification": "Primary page fetched; CS row extracted from current HTML"},
+        {"title": "International Freshman Steps to Admission", "publisher": "SJSU Admissions", "url": "https://www.sjsu.edu/admissions/international-freshman/want-to-apply/international-freshman-steps-to-admission/index.php", "supports": "Major selection and Cal State Apply follow-up route", "verification": "Primary page fetched; stale SAT/ACT language explicitly separated from current impaction policy"},
+        {"title": "English Proficiency Requirement", "publisher": "SJSU Admissions", "url": "https://www.sjsu.edu/admissions/international-freshman/admission-requirements/english-proficiency.php", "supports": "Three years English-medium full-time education exemption", "verification": "Dedicated policy fetched"},
+        {"title": "Required Financial Documents for International Students", "publisher": "SJSU Admissions", "url": "https://www.sjsu.edu/admissions/internationalfinancialdocs.php", "supports": "2026-27 and 2027-28 nonresident undergraduate estimates and 12-unit load", "verification": "Both dated tables fetched; no derived total substituted"},
+        {"title": "2026 SpartUp Incubator Pitch Jam", "publisher": "SJSU Events Calendar", "url": "https://events.sjsu.edu/event/2026-spartup-incubator-pitch-jam", "supports": "Concrete student-founder event example", "verification": "Past-event primary page fetched"}
+      ]
+    }
+  ]
+}
