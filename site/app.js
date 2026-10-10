@@ -198,6 +198,12 @@
     document.querySelector('#checked-date').textContent=main?.meta?.checked_at?`Sources checked ${main.meta.checked_at}`:'Public-safe planning guide';
     render();
   }
+  document.querySelector('.skip').addEventListener('click',event=>{
+    event.preventDefault();
+    const mainElement=document.querySelector('#main');
+    mainElement.focus({preventScroll:true});
+    mainElement.scrollIntoView({block:'start'});
+  });
   document.addEventListener('click',event=>{
     const target=event.target.closest('button');if(!target)return;
     if(target.hasAttribute('data-retry'))void load();
