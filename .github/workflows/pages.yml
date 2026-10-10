@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ['.github/workflows/pages.yml']
+    paths: ['.github/workflows/pages.yml', 'site/**']
 permissions:
   contents: write
   pages: write
@@ -20,36 +20,40 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v6
-      - name: Import only verified public guide files
-        env:
-          PUBLIC_SOURCE: https://licence-conscious-villages-walks.trycloudflare.com/
+      - name: Verify and apply reviewed keyboard repair
         run: |
           python3 - <<'PY'
-          import hashlib, os, urllib.request
+          import hashlib
           from pathlib import Path
+          root = Path('site')
           hashes = {
             'index.html': 'ec2411c42ac04149f3c852bc42cd9310e8ce50b06698ce6db34a9ba4c9482244',
             'styles.css': '6f2dd8bb62c1c5df965d779415bd9607b78eac085e593e2c94b7197e440eaa06',
-            'app.js': 'fa0dc53d6e97d535122d309248bbf1a5d106489409694bfcf7cdae327be40c65',
+            'app.js': '4a2a4533ead5e04f179282f75321771edfea1207a6a72360f319ed83c8ceaa77',
             'content.json': '2d799c20cb340a287b443aa5202c354872bc397d153fed9a079ed045d6431ab0',
             'additional-universities.json': '5b8e5cef69d61a4b861f6e468a7c3c09394cfac84afa63c609beae55b4e489ee'
           }
-          Path('site').mkdir(exist_ok=True)
+          assert {p.name for p in root.iterdir()} == set(hashes), 'Unexpected public file list'
+          target = root / 'app.js'
+          data = target.read_bytes()
+          if hashlib.sha256(data).hexdigest() == 'fa0dc53d6e97d535122d309248bbf1a5d106489409694bfcf7cdae327be40c65':
+            anchor = "  document.addEventListener('click',event=>{"
+            repair = "  document.querySelector('.skip').addEventListener('click',event=>{\n    event.preventDefault();\n    const mainElement=document.querySelector('#main');\n    mainElement.focus({preventScroll:true});\n    mainElement.scrollIntoView({block:'start'});\n  });\n"
+            text = data.decode('utf-8')
+            assert text.count(anchor) == 1, 'Ambiguous repair anchor'
+            target.write_bytes(text.replace(anchor, repair + anchor).encode('utf-8'))
           for name, expected in hashes.items():
-            target = Path('site') / name
-            data = target.read_bytes() if target.exists() else urllib.request.urlopen(os.environ['PUBLIC_SOURCE'] + name, timeout=60).read()
-            if hashlib.sha256(data).hexdigest() != expected:
-              raise RuntimeError('Public file hash mismatch: ' + name)
-            target.write_bytes(data)
+            data = (root / name).read_bytes()
+            assert hashlib.sha256(data).hexdigest() == expected, 'Public file hash mismatch: ' + name
             print('Verified', name, len(data))
           PY
-      - name: Preserve the imported five files for future builds
+      - name: Save the reviewed keyboard repair
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add site
+          git add site/app.js
           if ! git diff --cached --quiet; then
-            git commit -m 'Save verified public School Route Atlas files'
+            git commit -m 'Preserve current chapter when skipping to guide'
             git push origin HEAD:main
           fi
       - uses: actions/configure-pages@v5
